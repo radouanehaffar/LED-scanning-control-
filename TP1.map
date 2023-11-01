@@ -1,0 +1,38 @@
+MPLINK 4.48, Linker
+Linker Map File - Created Mon Oct 30 14:46:45 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00003c
+                   .cinit    romdata   0x00001e    program   0x000004
+                   .org_1       code   0x0003ff    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00001f      
+                            0x0003ff    0x0003ff      
+            33 out of 1094 program addresses used, program memory utilization is 3%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    DELAY   0x000013    program     static D:\TPmpetc\TP\TP1.asm    
+                     INIT   0x000000    program     static D:\TPmpetc\TP\TP1.asm    
+                     MAIN   0x000008    program     static D:\TPmpetc\TP\TP1.asm    
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     INIT   0x000000    program     static D:\TPmpetc\TP\TP1.asm    
+                     MAIN   0x000008    program     static D:\TPmpetc\TP\TP1.asm    
+                    DELAY   0x000013    program     static D:\TPmpetc\TP\TP1.asm    
+
+

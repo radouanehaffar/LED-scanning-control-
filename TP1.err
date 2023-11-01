@@ -1,0 +1,13 @@
+Warning[205] D:\TPMPETC\TP\TP1.ASM 2 : Found directive in column 1. (radix)
+Warning[205] D:\TPMPETC\TP\TP1.ASM 3 : Found directive in column 1. (INCLUDE)
+Message[301] C:\PROGRAM FILES (X86)\MICROCHIP\MPASM SUITE\P16F84.INC 33 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[203] D:\TPMPETC\TP\TP1.ASM 14 : Found opcode in column 1. (MOVLW)
+Warning[203] D:\TPMPETC\TP\TP1.ASM 15 : Found opcode in column 1. (TRIS)
+Warning[224] D:\TPMPETC\TP\TP1.ASM 15 : Use of this instruction is not recommended.
+Warning[203] D:\TPMPETC\TP\TP1.ASM 16 : Found opcode in column 1. (MOVLW)
+Warning[203] D:\TPMPETC\TP\TP1.ASM 17 : Found opcode in column 1. (MOVWF)
+Warning[203] D:\TPMPETC\TP\TP1.ASM 18 : Found opcode in column 1. (MOVLW)
+Warning[203] D:\TPMPETC\TP\TP1.ASM 19 : Found opcode in column 1. (MOVWF)
+Warning[203] D:\TPMPETC\TP\TP1.ASM 20 : Found opcode in column 1. (MOVLW)
+Warning[203] D:\TPMPETC\TP\TP1.ASM 21 : Found opcode in column 1. (MOVWF)
+Message[305] D:\TPMPETC\TP\TP1.ASM 29 : Using default destination of 1 (file).

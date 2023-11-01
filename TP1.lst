@@ -1,0 +1,216 @@
+MPASM  5.50                           TP1.ASM   10-30-2023  14:46:44         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;list p=16f84, f=inhx8m
+Warning[205]: Found directive in column 1. (radix)
+                      00002 radix hex
+Warning[205]: Found directive in column 1. (INCLUDE)
+                      00003 INCLUDE"P16F84.INC"
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F84 processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+Message[301]: MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+                      00206         LIST
+                      00004 
+  0000000C            00005 COUNT_1 EQU 0C
+  0000000D            00006 COUNT_2 EQU 0D
+  000003FF            00007 PIC84   EQU 03FF
+  0000000E            00008 SORTIE  EQU 0E
+  00000000            00009 CARRY   EQU 00
+                      00010 
+                      00011 ;Init
+                      00012 
+                      00013 INIT ORG 0000H
+Warning[203]: Found opcode in column 1. (MOVLW)
+0000   3000           00014 MOVLW 00
+Warning[203]: Found opcode in column 1. (TRIS)
+Warning[224]: Use of this instruction is not recommended.
+0001   0066           00015 TRIS PORTB
+Warning[203]: Found opcode in column 1. (MOVLW)
+0002   300F           00016 MOVLW 0FH
+Warning[203]: Found opcode in column 1. (MOVWF)
+0003   008C           00017 MOVWF COUNT_1
+Warning[203]: Found opcode in column 1. (MOVLW)
+0004   300F           00018 MOVLW 0FH
+Warning[203]: Found opcode in column 1. (MOVWF)
+0005   008D           00019 MOVWF COUNT_2
+Warning[203]: Found opcode in column 1. (MOVLW)
+0006   3001           00020 MOVLW 01
+Warning[203]: Found opcode in column 1. (MOVWF)
+0007   008E           00021 MOVWF SORTIE
+                      00022 
+                      00023 ;Programme principal
+                      00024 
+0008   080E           00025 MAIN:   MOVF SORTIE,0
+0009   0086           00026                 MOVWF PORTB
+000A   2???           00027                 CALL DELAY
+000B   1003           00028                 BCF STATUS,CARRY
+Message[305]: Using default destination of 1 (file).
+000C   0D8E           00029                 RLF SORTIE
+000D   1C03           00030                 BTFSS STATUS,CARRY
+000E   2???           00031                 GOTO MAIN
+MPASM  5.50                           TP1.ASM   10-30-2023  14:46:44         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+000F   3001           00032                 MOVLW 01
+0010   008E           00033                 MOVWF SORTIE
+0011   0064           00034                 clrwdt
+0012   2???           00035                 GOTO MAIN
+                      00036 ;Routine de reterd 
+0013   0B8C           00037 DELAY   DECFSZ COUNT_1,1
+0014   2???           00038                 GOTO DELAY 
+0015   30FF           00039                 MOVLW 0FFH
+0016   300C           00040                 MOVLW COUNT_1
+0017   0B8D           00041                 DECFSZ COUNT_2,1
+0018   2???           00042                 GOTO DELAY
+0019   30FF           00043                 MOVLW 0FFH
+001A   008C           00044                 MOVWF COUNT_1
+001B   30FF           00045                 MOVLW 0FFH
+001C   008D           00046                 MOVWF COUNT_2
+001D   0008           00047                 RETURN
+                      00048 
+                      00049                 ORG PIC84
+03FF   2???           00050                 GOTO INIT
+                      00051                 
+                      00052                 END
+MPASM  5.50                           TP1.ASM   10-30-2023  14:46:44         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+CARRY                             00000000
+COUNT_1                           0000000C
+COUNT_2                           0000000D
+DC                                00000001
+DELAY                             00000013
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INIT                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+MAIN                              00000008
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PIC84                             000003FF
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+MPASM  5.50                           TP1.ASM   10-30-2023  14:46:44         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RP1                               00000006
+SORTIE                            0000000E
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+__DEBUG                           1
+MPASM  5.50                           TP1.ASM   10-30-2023  14:46:44         PAGE  5
+
+
+
+
+
+
+Errors   :     0
+Warnings :    11 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+
